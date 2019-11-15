@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+       把下面str的name，age，say换成obj中的value值
+    */
+        let obj = {
+            name: '小明',
+            age: 18,
+            say: '好好学习，天天向上'
+        }
+        let str = '我的名字叫{name},年龄是{age}岁,我想说:{say}';
+        //let str = '我的名字叫'+obj.name+',年龄是'+obj.age+',,我想说:'+obj.say+'';
+        //console.log(str)
+
+        let { name, age, say } = obj;
+        //$0,$1,$2,$3
+        let str2 = str.replace(/我的名字叫{name},年龄是{age}岁,我想说:{say}/g, function ($0, $1, $2, $3) {
+            return '我的名字叫{' + ($1 = name) + '},年龄是{' + ($2 = age) + '}岁,我想说:{' + ($3 = say) + '}';
+        }
+        )
+        console.log(str2)
+
+
+
+        /*
+            计算下面字符串中哪个字符出现的次数最多,它是谁，出现了多少次
+        */
+
+        let str3 = 'hd82nxa89a3axdma2naejaaxaa8n2xdanja2cah2hnadhioamwajexnad8mdahiodn';
+
+        var ary = str3.split('').sort().join('').match(/(\d|[a-z])\1+/g)
+        //ary=["22222", "8888", "aaaaaaaaaaaaaaaaa", "ddddddd", "ee", "hhhhh", "ii", "jjj", "mmm", "nnnnnnn", "oo", "xxxxx"]
+        
+        // for (var i = 0; i < ary.length; i++) {
+            // ary2.push(ary[i].length)
+            // var ary3 = ary2.sort(function (a, b) {
+            //     return b - a;   //[17, 7, 7, 5, 5, 4, 3, 3, 2, 2, 2]
+            // })[0]
+    //把ary[i]按照长度从大到小排序，排序后的新数组给数组2
+            var ary2 = ary.sort(function (a, b) {
+                return b.length - a.length;   //[17, 7, 7, 5, 5, 4, 3, 3, 2, 2, 2]
+            })
+            console.log(ary2[0])
+            console.log(ary2[0][0])
+            console.log(ary2[0].length)
+            
+            
+        
+        
+ 
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

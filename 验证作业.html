@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+
+</head>
+
+<body>
+    <section>
+        <div id='box'>
+            <ul>
+                <li>
+                    <span>QQ:</span>
+                    <input type="text" id='qq'>
+                </li>
+                <li>
+                    <span>Email:</span>
+                    <input type="text" id='em'>
+                </li>
+                <li>
+                    <span>Mobile:</span>
+                    <input type="text" id='mo'>
+                </li>
+                <li>
+                    <span>Date:</span>
+                    <input type="text" id='da'>
+                </li>
+            </ul>
+
+            <button>注册</button>
+
+
+
+        </div>
+    </section>
+    <script>
+
+        var qq = document.querySelector('#qq');
+        var  da = document.querySelector('#da');
+
+
+        //console.log(qq);
+        qq.onkeyup = function () {
+            console.log(qq.value);
+
+            if ((/^1[0-9]{5,8}$/.test(qq.value))) {
+
+                qq.className = 'zhengchang';
+
+            } else {
+
+                qq.className = 'yichang';
+            }
+        }
+        da.onkeyup = function () {
+          console.log(da.value);
+
+            if (/^((19[2-9]\d{1})|(20((0[0-9])|(1[0-9]))))\-((0?[1-8])|(1[0-2]))\-((0?[1-9])|([1-2][0-9])|30|31)$/.test(da.value)) {
+
+                da.className = 'zhengchang';
+
+            } else {
+
+                da.className = 'yichang';
+            }
+        }
+
+
+        
+
+
+        // const em = document.querySelector('#em');
+        // const mo = document.querySelector('#mo');
+        // const da = document.querySelector('#da');
+
+        // let { value: v1 } = qq; //let v1 = start.value;
+        // let { value: v2 } = em;
+        // let { value: v3 } = mo;
+        // let { value: v4 } = da;
+
+        // if((/^\[1-9]\d{4-10}$/).test(v1)){
+        //     qq.className='yichang';
+        // }
+        // else{
+        //     qq.className=''
+        // }
+        myValid();
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
